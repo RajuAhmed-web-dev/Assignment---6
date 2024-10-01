@@ -3,7 +3,7 @@ const all = document.getElementById("all");
 
 
 // Display All Data Section
-const Allfetchdata = async () => {
+const allFetchData = async () => {
     const url = `https://openapi.programming-hero.com/api/retro-forum/posts`;
     const res = await fetch(url);
     const data = await res.json();
@@ -343,6 +343,6 @@ const loading = (isLoading) => {
 
 
 latestPost();
-Allfetchdata();
+allFetchData();
 searchdatafetch();
 
