@@ -60,7 +60,8 @@
                         <!-- Home Icon -->
                         <div class="">
                             <button
-                                class="flex items-center justify-center w-14 h-14 rounded-full bg-gray-100 hover:bg-gray-200 tooltip hover:tooltip-open tooltip-top" data-tip="Home">
+                                class="flex items-center justify-center w-14 h-14 rounded-full bg-gray-100 hover:bg-gray-200 tooltip hover:tooltip-open tooltip-top"
+                                data-tip="Home">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none">
                                     <path
@@ -69,13 +70,14 @@
                                         stroke-linejoin="round" />
                                 </svg>
                             </button>
-                            
+
                         </div>
 
                         <!-- Edit Icon -->
                         <div class="">
                             <button
-                                class="flex items-center justify-center w-14 h-14 rounded-full bg-gray-100 hover:bg-gray-200 tooltip hover:tooltip-open tooltip-top" data-tip="Tooltip">
+                                class="flex items-center justify-center w-14 h-14 rounded-full bg-gray-100 hover:bg-gray-200 tooltip hover:tooltip-open tooltip-top"
+                                data-tip="Tooltip">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none">
                                     <path
@@ -84,13 +86,14 @@
                                         stroke-linejoin="round" />
                                 </svg>
                             </button>
-                           
+
                         </div>
 
                         <!-- User Icon -->
                         <div class="">
                             <button
-                                class="flex items-center justify-center w-14 h-14 rounded-full bg-gray-100 hover:bg-gray-200 tooltip hover:tooltip-open tooltip-top" data-tip="User">
+                                class="flex items-center justify-center w-14 h-14 rounded-full bg-gray-100 hover:bg-gray-200 tooltip hover:tooltip-open tooltip-top"
+                                data-tip="User">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none">
                                     <path
@@ -99,13 +102,14 @@
                                         stroke-linejoin="round" />
                                 </svg>
                             </button>
-                         
+
                         </div>
 
                         <!-- Flag Icon -->
                         <div class="">
                             <button
-                                class="flex items-center justify-center w-14 h-14 rounded-full bg-gray-100 hover:bg-gray-200 tooltip hover:tooltip-open tooltip-top" data-tip="Flag">
+                                class="flex items-center justify-center w-14 h-14 rounded-full bg-gray-100 hover:bg-gray-200 tooltip hover:tooltip-open tooltip-top"
+                                data-tip="Flag">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none">
                                     <path
@@ -114,7 +118,7 @@
                                         stroke-linejoin="round" />
                                 </svg>
                             </button>
-                           
+
                         </div>
                     </div>
                     <button
@@ -145,9 +149,9 @@
                             win and wp forum coffee mug!</p>
 
                         <label class="input input-bordered flex items-center md:gap-[60px] rounded-[50px] md:w-[400px]">
-                            <input type="text" class="grow" placeholder="Search here anything" />
-                            <span
-                                class="badge bg-[#797DFC] py-[20px]  px-[27px]  text-[#FFFFFF] text-xl font-bold">Search</span>
+                            <input id="search-field" type="text" class="grow" placeholder="Search here anything" />
+                            <button class=" badge bg-[#797DFC] py-[20px]  px-[27px]  text-[#FFFFFF] text-xl font-bold"
+                            onclick="searchButton()">Search</button>
                         </label>
                     </div>
                     <!-- Stats Section -->
@@ -164,6 +168,7 @@
             </div>
         </section>
 
+
         <!-- Let’s Discuss section  -->
         <section class="md:mt-[100px] mt-5 max-w-[1170px] mx-auto">
             <div class="">
@@ -174,10 +179,19 @@
                     features allow for a streamlined .
                 </p>
             </div>
+
+            <!-- loding section  -->
+            <div id="loading" class="text-center my-8 hidden">
+                <span class="loading loading-dots loading-lg"></span>
+            </div>
+
             <div class="lg:flex gap-6 md:mt-12 mt-5 mx-2">
                 <!--left side  -->
                 <div id="all-post-container" class="mb-6 lg:mb-0 flex flex-col lg:flex-col gap-[24px] ">
-                  
+
+                </div>
+                <div id="search-container">
+
                 </div>
                 <!--Right side  -->
                 <div>
@@ -199,14 +213,16 @@
                                         </clipPath>
                                     </defs>
                                 </svg>
-                                <p class="text-[#12132D99] text-base font-normal inter">Make as read (<span id="makeReadCount">0</span>)</p>
+                                <p class="text-[#12132D99] text-base font-normal inter">Make as read (<span
+                                        id="makeReadCount">0</span>)</p>
                             </button>
                         </div>
 
-                        <!-- noti item  -->
-                         <div id="all">
 
-                         </div>
+                        <!-- noti item  -->
+                        <div id="all">
+
+                        </div>
 
                     </div>
 
@@ -245,10 +261,10 @@
                 </div>
 
                 <!-- card section  -->
-                 <div id="latest" class="md:flex gap-6" >
-                    
-                 </div>
-               
+                <div id="latest" class="md:flex gap-6">
+
+                </div>
+
             </div>
         </section>
     </main>
@@ -257,7 +273,8 @@
 
     <footer class=" footer-center bg-[#12132D0D] md:p-12 p-5 md:mt-24 mt-11">
         <h1 class="text-[#12132D] md:text-4xl text-3xl font-black text-center md:mb-4 mb-2">ReTro</h1>
-        <p class="text-[#12132DB2] md:text-base text-sm font-normal leading-7 md:w-[604px] mx-auto">Contrary to popular belief, Lorem
+        <p class="text-[#12132DB2] md:text-base text-sm font-normal leading-7 md:w-[604px] mx-auto">Contrary to popular
+            belief, Lorem
             Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
         <div class="flex justify-center md:mt-8 mt-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="175" height="24" viewBox="0 0 175 24" fill="none">
@@ -281,17 +298,11 @@
                     fill="#12132D" />
             </svg>
         </div>
-        
+
         <div class="border border-solid max-w-[1170px] mx-auto md:my-12 my-5"></div>
         <p class="text-[#12132D80] md:text-base text-sm font-light text-center">2017, All Rights Reserved.</p>
     </footer>
-
-
-
-
-
-
-
+   
     <script src="/js/index.js"></script>
 </body>
 
